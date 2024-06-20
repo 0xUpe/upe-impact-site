@@ -177,7 +177,7 @@ interface BadgeItemProps {
 function BadgeItem(props: BadgeItemProps) {
   return (
     <div className="flex flex-col border border-white-800 p-4 rounded-lg hover:bg-zinc-900 transition-colors hover:border-zinc-700 items-center">
-      <Image src={props.image} alt={props.title} className="w-16 h-16 mb-2" />
+      <Image src={props.image} width={1080} height={1080} alt={props.title} className="w-16 h-16 mb-2" />
       <h3 className="text-lg text-center font-semibold">{props.title}</h3>
     </div>
   );
@@ -236,7 +236,7 @@ interface OCSItemProps {
 function OCSItem(props: OCSItemProps) {
   return (
 	<div className={`flex flex-col p-0 items-center mx-auto ${props.width}`}>
-      <Image src={props.image} alt={props.title} className="w-50 mb-2" />
+      <Image src={props.image} width={300} height={150} alt={props.title} className="w-50 mb-2" />
     </div>
   );
 }
@@ -249,7 +249,7 @@ function OCS() {
     		<Image src={upeIcon} alt="" width={60} height={60} style={{ filter: "drop-shadow(0px 0px 24px #a726a9a8)" }} />
 			  <h3 className="text-xl text-center ml-4">Upe Impact was built during</h3>			  
 		  </div>
-		  	<Image src="/home/onchainsummerw.png" alt="Onchain Summer" className="mx-auto" />
+		  	<Image src="/home/onchainsummerw.png" width={946} height={279} alt="Onchain Summer" className="mx-auto" />
 			<div className="grid gap-4 grid-cols-2 md:grid-cols-2 lg:grid-cols-2 justify-center items-start mx-auto w-[fit-content]">
 				<OCSItem
 				  image="/ocs/base.png"
@@ -288,7 +288,7 @@ interface AlliesItemProps {
 function AlliesItem(props: AlliesItemProps) {
   return (
     <div className="flex flex-col p-4 items-center mx-auto w-[fit-content]">
-      <Image src={props.image} alt={props.title} className="w-50 mb-2" />
+      <Image src={props.image} width={300} height={150} alt={props.title} className="w-50 mb-2" />
     </div>
   );
 }
@@ -328,7 +328,7 @@ interface ProjectsItemProps {
 function ProjectsItem(props: ProjectsItemProps) {
   return (
     <div className="flex flex-col p-4 items-center">
-      <Image src={props.image} alt={props.title} className="w-50 mb-2" />
+      <Image src={props.image} width={300} height={150} alt={props.title} className="w-50 mb-2" />
       <a href={props.href} target="_blank" rel="noopener noreferrer" className="text-white-500 underline">
         {props.title}
       </a>
@@ -367,7 +367,7 @@ function Join() {
 				<div className="h-1 bg-gradient-to-r from-pink-600 via-red-500 to-yellow-400 rounded my-10 w-11/12"></div>
             </div>
             <div className="flex justify-center md:w-4/10 mt-6 md:mt-0 w-[fit-content] mx-auto w-full">
-                <Image src="/home/upemobile.png" alt="Upe Home" className="w-1/2 h-auto" />
+                <Image src="/home/upemobile.png" width={415} height={841} alt="Upe Home" className="w-1/2 h-auto" />
             </div>
         </div>
     );

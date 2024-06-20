@@ -24,7 +24,7 @@ if (!process.env.NEXT_PUBLIC_TEMPLATE_FACTORY_ADDRESS || !process.env.NEXT_PUBLI
 
 export const factoryAddress = process.env.NEXT_PUBLIC_TEMPLATE_FACTORY_ADDRESS as string;
 export const allyDropAddress = process.env.NEXT_PUBLIC_TEMPLATE_ALLY_DROP_ADDRESS as string;
-export const allyDropTokenId = process.env.NEXT_PUBLIC_TEMPLATE_ALLY_DROP_TOKEN_ID;
+export const allyDropTokenId = 0n;
 
 export const allyDropContract = getContract({
 	address: allyDropAddress,
