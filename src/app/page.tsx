@@ -50,6 +50,7 @@ export default function Home() {
 							<Projects />
 						</div>
 						<Join />	
+						<Footer />
 					</>
 				)}
 
@@ -96,12 +97,13 @@ function Header({ activeAccount }: HeaderProps) {
         </h2>  
 
 		{activeAccount && (
-			<div className="grid justify-center md:w-1/3 sm:w-full">
-				<h2 className="text-xl text-center font-semibold mb-2">Available Badges</h2>	
+			<div className="grid justify-center items-center md:w-1/3 sm:w-full">
+				<h2 className="text-xl text-center font-semibold mb-4">Available Badges</h2>	
 			<MenuItem
-			title="Upe Local Community Ally"
+					  title="Upe Local Community Ally"
+					  image="/badges/ally.png"
 			href="/ally"
-			description="I believe in Upe’s mission to crowdsource and syndicate local community information to everyone in Santa Cruz, Guanacaste."
+					  description="I believe in Upe’s mission to crowdsource and syndicate local community information to everyone in Santa Cruz, Guanacaste."
 			/>
 		</div>
 		)}
@@ -122,55 +124,75 @@ function DisconnectButton() {
 function Menu() {
 	return (
 		<div>
-			<h2 className="text-xl text-center font-semibold mb-2">COMING SOON! For Previous Upe Builders</h2>
-			<div className="grid gap-4 lg:grid-cols-3 justify-center">
+			<h2 className="text-xl text-center font-semibold mb-4">COMING SOON! For Previous Upe Builders</h2>
+			<div className="grid gap-4 lg:grid-cols-3 justify-center mx-auto w-[fit-content]">
 				<MenuItem
 					title="Season 2 Community Voter"
+					image="/badges/voter.png"
 					href="#"
 					description="Voting is empowering. Every week, the Upe community collectively decides what gets featured in the Upe digest. We shared over 500 events and 100 more voters weighed in."
+					isComingSoon={true}
+
 				/>
 				<MenuItem
 					title="Carnival for a Cause Contributor"
+					image="/badges/carnival.png"
 					href="#"
 					description="The first “Carnival for a Cause” brought together 600+ locals for a fun-filled day of carnival-style games while also supporting 12 different community causes. Upe ♥️ our initial Carnie cohort."
+					isComingSoon={true}
 				/>
 				<MenuItem
 					title="Genesis Kook"
+					image="/badges/kook.png"
 					href="#"
 					description="Upe Kooks are collaborators who tap into their network to obtain important local information and motivate others to be involved in initiatives that enhance our communities in Costa Rica."
+					isComingSoon={true}
 				/>
 								<MenuItem
 					title="Season 2 Contributor"
+					image="/badges/s2.png"
 					href="#"
 					description="For Season 2, locals collaborated to provide a public good. Using the Upe platform, contributors banded together to crowdsource and syndicate community information."
+					isComingSoon={true}
 				/>
 				<MenuItem
 					title="Season 1 Egg"
+					image="/badges/s1.png"
 					href="#"
 					description="Participants of Upe Season 1 were part of our first radical local community experiment. Our idea was simple yet profound: let the community curate, own, and capitalize on their information."
+					isComingSoon={true}
 				/>
 				<MenuItem
 					title="Genesis Builder"
+					image="/badges/genesis.png"
 					href="#"
 					description="Upe Genesis Community Builders put in time building a community knowledge base for information about our local communities’ businesses and organizations."
+					isComingSoon={true}
 				/>
 			</div>
 		</div>
 	);
 }
 
-function MenuItem(props: { title: string; href: string; description: string }) {
-	return (
-		<Link
-			href={props.href}
-			className="flex flex-col border border-zinc-800 p-4 rounded-lg hover:bg-zinc-900 transition-colors hover:border-zinc-700"
-		>
-			<article>
-				<h2 className="text-lg font-semibold mb-2">{props.title}</h2>
-				<p className="text-sm text-zinc-400">{props.description}</p>
-			</article>
-		</Link>
-	);
+interface MenuItemProps {
+    title: string;
+    image: string;
+    href: string;
+    description: string;
+    isComingSoon?: boolean;
+}
+
+function MenuItem(props: MenuItemProps) {
+    const content = (
+        <div className="flex flex-col border border-upe-silver-800 p-4 rounded-lg hover:bg-zinc-900 transition-colors hover:border-zinc-700 items-center justify-center mx-auto w-[fit-content]">
+            <h2 className="text-lg font-semibold mb-2 text-center">{props.title}</h2>
+            <Image src={props.image} width={1080} height={1080} alt={props.title} className="w-32 h-32 mb-2" />
+            <p className="text-sm text-zinc-400">{props.description}</p>
+            {props.isComingSoon && <p className="text-sm text-upe-pink font-semibold mt-2">Coming Soon</p>}
+        </div>
+    );
+
+    return props.isComingSoon ? content : <Link href={props.href}>{content}</Link>;
 }
 
 interface BadgeItemProps {
@@ -427,7 +449,7 @@ function Footer() {
 			<Link
 				className="text-center text-sm text-gray-400"
 				target="_blank"
-				href="https://github.com/0xUpe/"
+				href="https://github.com/0xUpe/upe-impact-site"
 			>
 				View code on GitHub
 			</Link>

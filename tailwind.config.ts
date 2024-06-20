@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         'upe-pink': '#EC3492 !important',
         'upe-grey': '#231F20 !important',
+        'upe-silver': '#C0C0C0 !important',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
