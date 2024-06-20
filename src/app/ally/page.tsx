@@ -29,13 +29,21 @@ const AllyHome: React.FC = () => {
 	});
 	const { data: ownedNfts } = useReadContract(getOwnedNFTs, {
 		contract: allyDropContract,
+		start: 0,
+		count: 10,
 		address: smartAccount?.address!,
 		queryOptions: { enabled: !!smartAccount },
 	});
+	// Check if the user owns the allyDropTokenId
+    const ownsAllyDropToken = ownedNfts?.some(nft => nft.id === allyDropTokenId);
+
+    console.log(ownsAllyDropToken);
+
+
 	return (
 		<div className="flex flex-col items-center">
 			<h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-12 text-zinc-100">
-  				{ownedNfts !== undefined && ownedNfts?.[0]?.quantityOwned > 0 ? "You have Claimed your ally badge!" : "Claim your ally badge!"}
+                {ownsAllyDropToken ? "You have Claimed your ally badge!" : "Claim your ally badge!"}
 			</h1>
 			<ConnectButton
 				client={client}
@@ -59,9 +67,9 @@ const AllyHome: React.FC = () => {
 						{smartAccount ? (
 						<>
 							<p className="font-semibold text-center mb-2">
-								You own {ownedNfts !== undefined && ownedNfts?.[0]?.quantityOwned || 0} ally badge!
+								You own {ownsAllyDropToken ? '1' : '0'} ally badge!
 							</p>
-							{ownedNfts !== undefined &&ownedNfts?.[0]?.quantityOwned > 0 ? null : (
+							{ownsAllyDropToken ? null : (
 									<TransactionButton
 										transaction={() =>
 										claimTo({
