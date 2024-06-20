@@ -406,7 +406,7 @@ function GetSocial() {
           <h2 className="text-2xl font-bold">GET SOCIAL</h2>
         </div>
         <div className="flex items-center space-x-4">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="https://facebook.com/hola.upe/" target="_blank" rel="noopener noreferrer">
 			<Image src={fbIcon} alt="Upe FB" width={32} height={32} style={{ filter: "drop-shadow(0px 0px 24px #a726a9a8)" }} />
           </a>
           <a href="https://twitter.com/upelocal" target="_blank" rel="noopener noreferrer">
