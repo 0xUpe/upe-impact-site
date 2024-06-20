@@ -6,6 +6,9 @@ import { Account } from "thirdweb/wallets";
 import { base, baseSepolia, ethereum, optimism } from "thirdweb/chains";
 import { accountAbstraction, client, wallets, customTheme } from "./constants";
 import upeIcon from "@public/upe_favicon.png";
+import fbIcon from "@public/fbicon.svg";
+import twIcon from "@public/twicon.svg";
+import igIcon from "@public/igicon.svg";
 import Link from "next/link";
 
 interface HeaderProps {
@@ -386,12 +389,36 @@ function Join() {
                 <p className="mt-4">Be a steward of your local community&apos;s information.</p>
 				<a href="https://u.pe/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block bg-blue-500 text-white py-2 px-4 rounded bg-upe-pink">START TODAY</a>
 				<div className="h-1 bg-gradient-to-r from-pink-600 via-red-500 to-yellow-400 rounded my-10 w-11/12"></div>
+				<GetSocial />
             </div>
             <div className="flex justify-center md:w-4/10 mt-6 md:mt-0 w-[fit-content] mx-auto w-full">
                 <Image src="/home/upemobile.png" width={415} height={841} alt="Upe Home" className="w-1/2 h-auto" />
             </div>
         </div>
     );
+}
+
+function GetSocial() {
+  return (
+    <div className="flex flex-col items-center mt-20">
+      <div className="w-full max-w-screen-xl grid grid-cols-2 gap-4">
+        <div className="flex items-center">
+          <h2 className="text-2xl font-bold">GET SOCIAL</h2>
+        </div>
+        <div className="flex items-center space-x-4">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+			<Image src={fbIcon} alt="Upe FB" width={32} height={32} style={{ filter: "drop-shadow(0px 0px 24px #a726a9a8)" }} />
+          </a>
+          <a href="https://twitter.com/upelocal" target="_blank" rel="noopener noreferrer">
+            <Image src={twIcon} alt="Upe FB" width={32} height={32} style={{ filter: "drop-shadow(0px 0px 24px #a726a9a8)" }} />
+          </a>
+          <a href="https://www.instagram.com/upe.local/" target="_blank" rel="noopener noreferrer">
+            <Image src={igIcon} alt="Upe FB" width={32} height={32} style={{ filter: "drop-shadow(0px 0px 24px #a726a9a8)" }} />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function Footer() {
