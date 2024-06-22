@@ -6,7 +6,7 @@ const DisconnectButton: React.FC = () => {
 
   return (
     <div className="disconnect m-2" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-      <button className="bg-upe-pink hover:bg-upe-grey text-white font-bold py-2 px-4 rounded" onClick={() => wallet && disconnect(wallet)}>
+      <button className="bg-upe-pink hover:bg-upe-silver text-white font-bold py-2 px-4 rounded" onClick={() => wallet && disconnect(wallet)}>
       Disconnect
       </button>
     </div>
