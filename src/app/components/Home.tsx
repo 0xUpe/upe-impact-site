@@ -1,17 +1,17 @@
 "use client";
 
 import { ConnectEmbed, useActiveAccount } from "thirdweb/react";
-import { client, wallets, accountAbstraction, baseSepolia, customTheme } from "./constants";
-import Header from "./components/Header";
-import DisconnectButton from "./components/DisconnectButton";
-import Badges from "./components/Badges";
-import WhatIsUpe from "./components/WhatIsUpe";
-import OCS from "./components/OCS";
-import Allies from "./components/Allies";
-import Projects from "./components/Projects";
-import Join from "./components/Join";
-import Footer from "./components/Footer";
-import Menu from "./components/Menu";
+import { client, wallets, accountAbstraction, baseSepolia, customTheme } from "../constants";
+import Header from "./Header";
+import DisconnectButton from "./DisconnectButton";
+import Badges from "./Badges";
+import WhatIsUpe from "./WhatIsUpe";
+import OCS from "./OCS";
+import Allies from "./Allies";
+import Projects from "./Projects";
+import Join from "./Join";
+import Footer from "./Footer";
+import Menu from "./Menu";
 
 const Home: React.FC = () => {
   const activeAccount = useActiveAccount();
