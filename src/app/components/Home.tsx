@@ -19,9 +19,9 @@ const Home: React.FC = () => {
   return (
     <div className="outer-container py-1 w-full mx-auto max-w-screen-xl">
       <div className="inner-container mx-auto">
-        <div className="items-center">
-          {activeAccount && <DisconnectButton />}
+        <div className="flex justify-between items-center w-full mb-4">
           <Header activeAccount={activeAccount || null} />
+          {activeAccount && <DisconnectButton />}
         </div>
         <div className="flex justify-center mb-10">
           <ConnectEmbed

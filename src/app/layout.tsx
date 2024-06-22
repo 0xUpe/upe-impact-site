@@ -7,7 +7,7 @@ const inter = Quicksand({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Impact | Upe",
-  description: "Impact tracking and reccognition for Upe",
+  description: "Impact tracking and recognition for Upe",
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-upe-grey`}>
-        <main className="pb-10 min-h-[100vh] flex items-center justify-center container max-w-screen-xl mx-auto">
+        <main className="pb-10 min-h-[100vh] container max-w-screen-xl mx-auto">
           <ThirdwebProvider>{children}</ThirdwebProvider>
         </main>
       </body>
