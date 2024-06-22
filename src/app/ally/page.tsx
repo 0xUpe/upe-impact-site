@@ -33,12 +33,10 @@ const AllyHome: React.FC = () => {
 	// Check if the user owns the allyDropTokenId
     const ownsAllyDropToken = ownedNfts?.some(nft => nft.id === allyDropTokenId);
 
-    console.log(ownsAllyDropToken);
-
 	return (
 		<div className="flex flex-col items-center">
-			<h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-12 text-zinc-100">
-                {ownsAllyDropToken ? "You have Claimed your ally badge!" : "Claim your ally badge!"}
+			<h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-12 text-zinc-100 mt-4">
+                {ownsAllyDropToken ? "You have Claimed your Ally badge!" : "Claim your Ally badge!"}
 			</h1>
 			<ConnectButton
 				client={client}

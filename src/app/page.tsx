@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         </div>
         <div className="flex justify-center mb-10">
           <ConnectEmbed
-            client={client}
+            client={client}            
             wallets={wallets}
             showAllWallets={false}
             chain={baseSepolia}

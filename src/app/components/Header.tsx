@@ -1,7 +1,7 @@
 import Image from "next/image";
 import upeIcon from "@public/upe_favicon.png";
-import MenuItem from "./MenuItem"; // Adjust the path if necessary
-import { Account } from "thirdweb/wallets"; // Import Account type
+import MenuItem from "./MenuItem"; 
+import { Account } from "thirdweb/wallets"; 
 
 interface HeaderProps {
   activeAccount: Account | null;
@@ -14,8 +14,7 @@ const Header: React.FC<HeaderProps> = ({ activeAccount }) => {
         src={upeIcon}
         alt=""
         width={120}
-        height={120}
-        style={{ filter: "drop-shadow(0px 0px 24px #a726a9a8)" }}
+        height={120}        
       />
       <h1 className="text-2xl md:text-6xl tracking-tighter mb-6 text-zinc-100">
         {activeAccount ? (
