@@ -1,5 +1,6 @@
 "use client";
-import type React from "react";
+
+import React from "react";
 import { claimTo, getNFT, getOwnedNFTs } from "thirdweb/extensions/erc1155"; 
 import {
 	ConnectButton,
@@ -15,11 +16,6 @@ import {
 	allyDropTokenId,
 } from "../constants";
 import Link from "next/link";
-
-// For logging
-/* 
-import React, { useEffect } from 'react'; 
-*/
 
 const AllyHome: React.FC = () => {
 	const smartAccount = useActiveAccount();
@@ -38,7 +34,6 @@ const AllyHome: React.FC = () => {
     const ownsAllyDropToken = ownedNfts?.some(nft => nft.id === allyDropTokenId);
 
     console.log(ownsAllyDropToken);
-
 
 	return (
 		<div className="flex flex-col items-center">
