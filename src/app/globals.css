@@ -26,11 +26,17 @@ html {
 }
 
 .outer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @apply flex flex-col items-center;
 }
 
 .inner-container {
-  width: 100%;
+  @apply w-full;
+}
+
+.btn-vote {
+  @apply text-white my-1 border-2 border-upe-silver rounded-full w-16 h-16 flex items-center justify-center cursor-pointer text-lg transition-colors duration-300 ease-in-out;
+}
+
+.btn-vote.highlighted {
+  @apply bg-upe-light-pink;
 }

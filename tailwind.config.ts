@@ -9,9 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'upe-pink': '#EC3492 !important',
-        'upe-grey': '#231F20 !important',
-        'upe-silver': '#C0C0C0 !important',
+        'upe-pink': '#EC3492',
+        'upe-light-pink': 'rgba(236, 52, 146, 0.5)',
+        'upe-grey': '#231F20',
+        'upe-silver': '#C0C0C0',
+        'upe-pale-grey': '#ECECEC',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
