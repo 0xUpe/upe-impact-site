@@ -1,5 +1,5 @@
 import { useWalletDetailsModal } from "thirdweb/react";
-import { client } from "../constants";
+import { client } from "@/constants";
 
 const WalletDetails: React.FC = () => {
 

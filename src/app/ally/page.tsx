@@ -14,7 +14,7 @@ import {
 	client,
 	allyDropContract,
 	allyDropTokenId,
-} from "../../constants";
+} from "@/constants";
 import Link from "next/link";
 
 const AllyHome: React.FC = () => {

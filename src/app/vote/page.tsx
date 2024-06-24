@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useActiveAccount } from "thirdweb/react";
-import ConnectWallet from "./_components/ConnectWallet";
+import SignIn from "@/components/SignIn";
 import EventItem from "./_components/EventItem";
 import { fetchEvents } from "./_components/fetchEvents";
 import { handleVote } from "./_components/handleVote";
@@ -42,7 +42,7 @@ const VotePage: React.FC = () => {
       <h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-4 text-zinc-100 mt-4">
         Vote on Events
       </h1>
-      <ConnectWallet />
+      <SignIn />
       {account?.address ? (
         <div className="flex flex-col w-full items-center p-3">
           {events.length > 0 && !allVotesSubmitted ? (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ConnectEmbed } from 'thirdweb/react';
-import { client, wallets, accountAbstraction, baseSepolia, customTheme } from '../constants';
+import { client, wallets, accountAbstraction, baseSepolia, customTheme } from '@/constants';
 
 const SignIn: React.FC = () => {
   return (
