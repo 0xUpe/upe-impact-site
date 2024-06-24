@@ -13,7 +13,7 @@ import {
 	client,
 	allyDropContract,
 	allyDropAddress,
-} from "../constants";
+} from "../../constants";
 import Link from "next/link";
 
 const BadgesHome: React.FC = () => {

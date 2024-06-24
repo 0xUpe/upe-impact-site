@@ -7,8 +7,6 @@ import EventItem from "./_components/EventItem";
 import { fetchEvents } from "./_components/fetchEvents";
 import { handleVote } from "./_components/handleVote";
 import { handleSubmit } from "./_components/handleSubmit";
-import { VoteTypes } from "./_components/voteTypes";
-
 
 const VotePage: React.FC = () => {
   const account = useActiveAccount();

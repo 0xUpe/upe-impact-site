@@ -14,8 +14,6 @@
     "react-dom": "^18",
     "thirdweb": "^5.29.2",
     "date-fns": "^3.6.0",
-    "mongodb": "^6.7.0",
-    "mongoose": "^8.4.3",
     "@ethereum-attestation-service/eas-sdk": "^2.3.0"
   },
   "devDependencies": {
