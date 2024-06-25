@@ -3,18 +3,17 @@
 import React from "react";
 import { claimTo, getNFT, getOwnedNFTs } from "thirdweb/extensions/erc1155"; 
 import {
-	ConnectButton,
 	MediaRenderer,
 	TransactionButton,
 	useActiveAccount,
 	useReadContract,
 } from "thirdweb/react";
 import {
-	accountAbstraction,
 	client,
 	allyDropContract,
 	allyDropTokenId,
 } from "@/constants";
+import SignIn from "@/components/SignIn";
 import Link from "next/link";
 
 const AllyHome: React.FC = () => {
@@ -38,13 +37,7 @@ const AllyHome: React.FC = () => {
 			<h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-12 text-zinc-100 mt-4">
                 {ownsAllyDropToken ? "You have Claimed your Ally badge!" : "Claim your Ally badge!"}
 			</h1>
-			<ConnectButton
-				client={client}
-				accountAbstraction={accountAbstraction}
-				connectModal={{
-					size: "compact",
-				}}
-			/>
+			<SignIn	/>
 			<div className="flex flex-col">
 				{isNftLoading ? (
 					<div className="w-full mt-24">Loading...</div>
