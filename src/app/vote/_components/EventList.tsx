@@ -1,4 +1,3 @@
-// src/app/vote/_components/EventList.tsx
 import React, { useState } from "react";
 import EventItem from "./EventItem";
 import VoteSummary from "./VoteSummary";

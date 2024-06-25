@@ -1,5 +1,9 @@
 export const fetchEvents = async () => {
-  const response = await fetch("https://u.pe/wp-json/wp/v2/pages/46355");
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  if (!apiUrl) {
+    throw new Error("API URL is not defined in environment variables.");
+  }
+  const response = await fetch(`${apiUrl}`);
   const data = await response.json();
 
   const eventsHtml = data.content.rendered;

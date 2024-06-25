@@ -43,5 +43,5 @@ export const handleVote = (
 
     setCurrentIndex(prevIndex => Math.min(prevIndex + 1, events.length - 1));
     setHighlightedVote(null); // Reset highlight after delay
-  }, 1000); // 1 second delay
+  }, 500); // 500ms delay
 };
