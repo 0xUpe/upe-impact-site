@@ -1,8 +1,9 @@
 import React from 'react';
-import { ConnectEmbed } from 'thirdweb/react';
+import { ConnectButton, ConnectEmbed, useActiveAccount } from 'thirdweb/react';
 import { client, wallets, accountAbstraction, baseSepolia, customTheme } from '@/constants';
 
 const SignIn: React.FC = () => {
+  const account = useActiveAccount();
   return (
     <ConnectEmbed
       client={client}            

@@ -1,6 +1,6 @@
 "use client";
 
-import { useActiveAccount } from "thirdweb/react";
+import { useActiveAccount, ThirdwebProvider } from "thirdweb/react";
 import Header from "@/components/Header";
 import DisconnectButton from "@/components/DisconnectButton";
 import Badges from "@/components/Badges";
@@ -24,7 +24,9 @@ const HomePage: React.FC = () => {
           <Header activeAccount={activeAccount || null} />
         </div>
         <div className="flex justify-center mb-10">
-          <SignIn />
+          <ThirdwebProvider>
+            <SignIn />
+          </ThirdwebProvider>
         </div>
         {!activeAccount ? (
           <>

@@ -1,0 +1,86 @@
+"use client";
+import React, { useEffect, useState } from 'react';
+import { useActiveAccount, TransactionButton } from 'thirdweb/react';
+import { EAS, SchemaEncoder } from '@ethereum-attestation-service/eas-sdk';
+import SignInWalletModal from "@/components/SignInWalletModal";
+
+import {
+  accountAbstraction,
+  client,
+  customTheme
+} from "@/constants";
+
+// import WalletDetails from "./WalletDetails";
+// <WalletDetails />
+
+function EASExample() {
+  const signer = useActiveAccount();
+  const [isSignerReady, setIsSignerReady] = useState(false);
+
+  useEffect(() => {
+    if (signer) {
+      setIsSignerReady(true);
+    }
+  }, [signer]);
+
+  const easContractAddress = "0x4200000000000000000000000000000000000021";
+  const schemaUID = "0xf58b8b212ef75ee8cd7e8d803c37c03e0519890502d5e99ee2412aae1456cafe";
+  const eas = new EAS(easContractAddress);
+  const schemaEncoder = new SchemaEncoder("string statement");
+  const encodedData = schemaEncoder.encodeData([{ name: "statement", value: "Just a Test3", type: "string" }]);
+
+  const handleTransaction = async () => {
+    if (!signer) {
+      throw new Error("No signer available");
+    }
+
+    await eas.connect(signer);
+
+    // Log the returned transaction to inspect its structure
+    const tx = await eas.attest({
+      schema: schemaUID,
+      data: {
+        recipient: "0x0000000000000000000000000000000000000000",
+        expirationTime: 0n,
+        revocable: true,
+        data: encodedData,
+      },
+    });
+    console.log("Transaction object:", tx);
+
+    // If tx has a different structure, handle it accordingly
+    if (tx && tx.wait) {
+      const receipt = await tx.wait();
+      return receipt;
+    } else {
+      throw new Error("Unexpected transaction object structure");
+    }
+  };
+
+  return (
+    <div>
+      {!isSignerReady ? (
+        <p>Loading...</p>
+      ) : (
+        <TransactionButton
+          transaction={handleTransaction}
+          onTransactionSent={(result) => {
+            console.log("Transaction submitted", result.transactionHash);
+          }}
+          onTransactionConfirmed={(receipt) => {
+            console.log("Transaction confirmed", receipt.transactionHash);
+          }}
+          onError={(error) => {
+            console.error("Transaction error", error);
+          }}
+          isDisabled={!signer}
+        >
+          Confirm Transaction
+        </TransactionButton>
+      )}
+      <SignInWalletModal />
+    </div>
+  );
+}
+
+export default EASExample;
