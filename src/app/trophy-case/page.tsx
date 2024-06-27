@@ -2,19 +2,18 @@
 
 import React, { useEffect, useState } from "react";
 import { getNFT, getOwnedNFTs } from "thirdweb/extensions/erc1155"; 
-import {
-	ConnectButton,
+import {	
 	MediaRenderer,
 	useActiveAccount,
 	useReadContract,
 } from "thirdweb/react";
-import {
-	accountAbstraction,
+import {	
 	client,
 	allyDropContract,
 	allyDropAddress,
-} from "../constants";
+} from "@/constants";
 import Link from "next/link";
+import SignIn from "@/components/SignIn";
 
 const BadgesHome: React.FC = () => {
 	const smartAccount = useActiveAccount();
@@ -58,13 +57,7 @@ const BadgesHome: React.FC = () => {
 			<h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-12 text-zinc-100 mt-4">
                 {ownedNfts?.length ? "Your Badges" : "You do not have any Badges"}
 			</h1>
-			<ConnectButton
-				client={client}
-				accountAbstraction={accountAbstraction}
-				connectModal={{
-					size: "compact",
-				}}
-			/>
+			<SignIn />
 			<div className="flex flex-col w-full">
 				{isLoading ? (
 					<div className="w-full mt-24">Loading...</div>
