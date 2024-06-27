@@ -49,7 +49,7 @@ const BadgesHome: React.FC = () => {
 	}, [ownedNftsData]);
 
 	const openSeaUrl = (contractAddress: string, tokenId: bigint) => {
-		return `https://opensea.io/assets/base-sepolia/${contractAddress}/${tokenId}`;
+		return `https://opensea.io/assets/base/${contractAddress}/${tokenId}`;
 	};
 
 	return (
