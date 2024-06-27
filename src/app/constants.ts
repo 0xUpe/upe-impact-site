@@ -42,7 +42,7 @@ export const wallets = [
     smartAccount: {
       chain: base,
       sponsorGas: true,
-      factoryAddress: factoryAddress,
+      factoryAddress: factoryAddress,      
     },
     auth: {
       options: ["email"],
