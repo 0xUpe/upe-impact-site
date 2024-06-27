@@ -31,8 +31,8 @@ export const allyDropContract = getContract({
 });
 
 export const accountAbstraction: SmartWalletOptions = {
-  chain,
   factoryAddress,
+  chain,
   sponsorGas: true,
 };
 
@@ -42,7 +42,7 @@ export const wallets = [
     smartAccount: {
       chain: base,
       sponsorGas: true,
-      factoryAddress: factoryAddress,      
+      factoryAddress: factoryAddress,
     },
     auth: {
       options: ["email"],
