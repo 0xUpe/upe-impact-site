@@ -1,5 +1,5 @@
 import { createThirdwebClient, getContract } from "thirdweb";
-import { baseSepolia } from "thirdweb/chains";
+import { base } from "thirdweb/chains";
 import { SmartWalletOptions } from "thirdweb/wallets";
 import { createWallet, inAppWallet } from "thirdweb/wallets";
 import { darkTheme } from "thirdweb/react";
@@ -14,7 +14,7 @@ export const client = createThirdwebClient({
   clientId: clientId,
 });
 
-export const chain = baseSepolia;
+export const chain = base;
 
 if (!process.env.NEXT_PUBLIC_TEMPLATE_FACTORY_ADDRESS || !process.env.NEXT_PUBLIC_TEMPLATE_ALLY_DROP_ADDRESS) {
   throw new Error('Required environment variables are not defined');
@@ -22,7 +22,7 @@ if (!process.env.NEXT_PUBLIC_TEMPLATE_FACTORY_ADDRESS || !process.env.NEXT_PUBLI
 
 export const factoryAddress = process.env.NEXT_PUBLIC_TEMPLATE_FACTORY_ADDRESS as string;
 export const allyDropAddress = process.env.NEXT_PUBLIC_TEMPLATE_ALLY_DROP_ADDRESS as string;
-export const allyDropTokenId = 3n;
+export const allyDropTokenId = 0n;
 
 export const allyDropContract = getContract({
   address: allyDropAddress,
@@ -40,7 +40,7 @@ export const wallets = [
   //createWallet("com.coinbase.wallet"),
   inAppWallet({
     smartAccount: {
-      chain: baseSepolia,
+      chain: base,
       sponsorGas: true,
       factoryAddress: factoryAddress,
     },
@@ -86,4 +86,4 @@ export const customTheme = darkTheme({
 });
 
 // Export all constants at the end
-export { baseSepolia };
+export { base };

@@ -1,7 +1,7 @@
 "use client";
 
 import { ConnectEmbed, useActiveAccount } from "thirdweb/react";
-import { client, wallets, accountAbstraction, baseSepolia, customTheme } from "./constants";
+import { client, wallets, accountAbstraction, base, customTheme } from "./constants";
 import Header from "./components/Header";
 import DisconnectButton from "./components/DisconnectButton";
 import Badges from "./components/Badges";
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
             client={client}            
             wallets={wallets}
             showAllWallets={false}
-            chain={baseSepolia}
+            chain={base}
             accountAbstraction={accountAbstraction}
             showThirdwebBranding={false}
             theme={customTheme}
