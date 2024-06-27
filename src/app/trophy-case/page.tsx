@@ -58,7 +58,13 @@ const BadgesHome: React.FC = () => {
   }, [ownedBadgesData, ownedTrophiesData]);
 
   const openSeaUrl = (contractAddress: string, tokenId: bigint) => {
-    return `https://opensea.io/assets/base/${contractAddress}/${tokenId}`;
+    if (process.env.CHAIN_CHOICE_BASE) {
+      return `https://opensea.io/assets/base/${contractAddress}/${tokenId}`;
+    } else if (process.env.CHAIN_CHOICE_BASE_SEPOLIA) {
+      return `https://testnets.opensea.io/assets/base-sepolia/${contractAddress}/${tokenId}`;
+    } else {
+      return `https://testnets.opensea.io/assets/base-sepolia/${contractAddress}/${tokenId}`;
+    }
   };
 
   const toggleDescription = (index: number) => {
