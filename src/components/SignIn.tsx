@@ -1,6 +1,6 @@
 import React from 'react';
 import { ConnectEmbed } from 'thirdweb/react';
-import { client, wallets, accountAbstraction, baseSepolia, customTheme } from '@/constants';
+import { client, wallets, accountAbstraction, base, customTheme } from '@/constants';
 
 const SignIn: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const SignIn: React.FC = () => {
       client={client}            
       wallets={wallets}
       showAllWallets={false}
-      chain={baseSepolia}
+      chain={base}
       accountAbstraction={accountAbstraction}
       showThirdwebBranding={false}
       theme={customTheme}
