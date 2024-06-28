@@ -12,7 +12,7 @@ const WhatIsUpe: React.FC = () => {
         </div>
         <div className="flex flex-col items-center">
           <p className="mb-4 text-upe-grey"><span className="text-upe-pink">Upe Impact</span> is a web app designed to facilitate the coordination of community betterment projects and track their results on-chain. With an integrated authentication system the application generates user smart accounts upon login, ensuring secure access for all users, regardless of their technical expertise, from web3 natives to novices.</p>
-          <a href="#" rel="noopener noreferrer" className="mt-6 inline-block bg-blue-500 text-white py-2 px-4 rounded bg-upe-pink">LEARN MORE</a>
+          <a href="/about" rel="noopener noreferrer" className="mt-6 inline-block bg-blue-500 text-white py-2 px-4 rounded bg-upe-pink">LEARN MORE</a>
         </div>
       </div>
     </div>
