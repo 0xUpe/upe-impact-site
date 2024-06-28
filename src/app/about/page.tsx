@@ -52,7 +52,7 @@ const AboutPage: React.FC = () => {
           </p>
           <h3 className="text-2xl font-semibold mb-4">Our Aspirations</h3>
           <p className="text-lg">
-            We hope our community experiences an "ah-ha" moment, realizing the value of web3 technology for impact narratives. We anticipate this event to be a springboard for more conversations, bringing more people into the Upe community and onchain, utilizing Base and Coinbase Wallet.
+            We hope our community experiences an &quot;ah-ha&quot; moment, realizing the value of web3 technology for impact narratives. We anticipate this event to be a springboard for more conversations, bringing more people into the Upe community and onchain, utilizing Base and Coinbase Wallet.
             </p>
             <Link href={"/"} className="text-base text-gray-400 mt-8 text-center block py-2 px-4 mx-auto">
             Back to home
