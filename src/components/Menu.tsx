@@ -4,7 +4,7 @@ const Menu: React.FC = () => {
   return (
     <div>
       <h2 className="text-xl text-center font-semibold mb-4">COMING SOON! For Previous Upe Builders</h2>
-      <div className="grid gap-4 lg:grid-cols-3 justify-center mx-auto w-[fit-content]">
+      <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 justify-center px-4 mx-auto w-[fit-content]">
         <MenuItem
           title="Season 2 Community Voter"
           image="/badges/voter.png"

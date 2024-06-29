@@ -53,7 +53,7 @@ const BadgesHome: React.FC = () => {
 	};
 
 	return (
-		<div className="flex flex-col items-center">
+		<div className="flex flex-col items-center px-4">
 			<h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-12 text-zinc-100 mt-4">
                 {ownedNfts?.length ? "Your Badges" : "You do not have any Badges"}
 			</h1>
@@ -75,9 +75,9 @@ const BadgesHome: React.FC = () => {
 										style={{ width: "100%", marginTop: "10px" }}
 									/>
 									<h2 className="text-lg font-semibold mt-4 text-center">{nft.metadata.name}</h2>
-									<p className="text-sm text-gray-400 text-center mt-2">{nft.metadata.description}</p>
-									<p className="text-sm text-gray-400 text-center mt-2">Token ID: {tokenId.toString()}</p>
-									{Array.isArray(nft.metadata.attributes) && nft.metadata.attributes.length > 0 ? (
+									<p className="text-sm text-gray-400 text-left mt-2">{nft.metadata.description}</p>
+									{/* <p className="text-sm text-gray-400 text-center mt-2">Token ID: {tokenId.toString()}</p> */}
+								 	{/* {Array.isArray(nft.metadata.attributes) && nft.metadata.attributes.length > 0 ? (
 										<div className="mt-4">
 											<h3 className="text-md font-semibold text-center">Traits:</h3>
 											<ul className="text-sm text-gray-400 text-center mt-2">
@@ -90,7 +90,7 @@ const BadgesHome: React.FC = () => {
 										</div>
 									) : (
 										<p className="text-sm text-gray-400 text-center mt-2">No traits available</p>
-									)}
+									)} */}
 									<a
 										href={openSeaUrl(allyDropAddress, tokenId)}
 										target="_blank"
