@@ -40,6 +40,13 @@ const Menu: React.FC = () => {
           description="Upe Genesis Community Builders put in time building a community knowledge base for information about our local communities’ businesses and organizations."
           isComingSoon
         />
+        <ClaimItem
+          title="More!"
+          image="/badges/more.png"
+          href="#"
+          description="We have more badges coming soon! Stay tuned for more ways to earn badges and trophies."
+          isComingSoon
+        />
       </div>
     </div>
   );
