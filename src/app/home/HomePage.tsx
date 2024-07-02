@@ -10,7 +10,7 @@ import Allies from "@/components/Allies";
 import Projects from "@/components/Projects";
 import Join from "@/components/Join";
 import Footer from "@/components/Footer";
-import Menu from "@/components/Menu";
+import Menu from "@/components/Claims";
 import SignIn from "@/components/SignIn";
 
 const HomePage: React.FC = () => {

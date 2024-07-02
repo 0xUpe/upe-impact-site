@@ -24,8 +24,17 @@ export const factoryAddress = process.env.NEXT_PUBLIC_TEMPLATE_FACTORY_ADDRESS a
 export const allyDropAddress = process.env.NEXT_PUBLIC_TEMPLATE_ALLY_DROP_ADDRESS as string;
 export const allyDropTokenId = 0n;
 
+export const kookDropAddress = process.env.NEXT_PUBLIC_TEMPLATE_KOOK_DROP_ADDRESS as string;
+export const kookDropTokenId = 0n;
+
 export const allyDropContract = getContract({
   address: allyDropAddress,
+  chain,
+  client,
+});
+
+export const kookDropContract = getContract({
+  address: kookDropAddress,
   chain,
   client,
 });

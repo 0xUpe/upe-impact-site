@@ -10,35 +10,35 @@ import {
 } from "thirdweb/react";
 import {
 	client,
-	allyDropContract,
-	allyDropTokenId,
+	kookDropContract,
+	kookDropTokenId,
 } from "@/constants";
 import SignIn from "@/components/SignIn";
 import Link from "next/link";
 
-const AllyHome: React.FC = () => {
+const KookHome: React.FC = () => {
 	const smartAccount = useActiveAccount();
 	const { data: nft, isLoading: isNftLoading } = useReadContract(getNFT, {
-		contract: allyDropContract,
-		tokenId: allyDropTokenId,
+		contract: kookDropContract,
+		tokenId: kookDropTokenId,
 	});
 	const { data: ownedNfts } = useReadContract(getOwnedNFTs, {
-		contract: allyDropContract,
+		contract: kookDropContract,
 		start: 0,
 		count: 10,
 		address: smartAccount?.address!,
 		queryOptions: { enabled: !!smartAccount },
 	});
-	// Check if the user owns the allyDropTokenId
-    const ownsAllyDropToken = ownedNfts?.some(nft => nft.id === allyDropTokenId);
+	// Check if the user owns the kookDropTokenId
+    const ownsKookDropToken = ownedNfts?.some(nft => nft.id === kookDropTokenId);
 
 	return (
 		<div className="flex flex-col items-center">
-			<h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold md:font-bold tracking-tighter mb-8 text-zinc-100 mt-4">
-                {ownsAllyDropToken ? "You have Claimed your Ally badge!" : "Claim your Ally badge!"}
+			<h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-12 text-zinc-100 mt-4">
+                {ownsKookDropToken ? "You have Claimed your Kook trophy!" : "Claim your Kook trophy!"}
 			</h1>
 			<p className="text-md md:text-lg lg:text-lg font-semibold text-center mb-4 mx-auto w-3/4 md:w-1/2 lg:w-1/2">
-				I believe in Upe&apos;s mission to crowdsource and syndicate local community information to everyone in Santa Cruz, Guanacaste.
+				Upe Kooks are collaborators who tap into their network to obtain important local information and motivate others to be involved in initiatives that enhance our communities in Costa Rica.
 			</p>
 			<SignIn	/>
 			<div className="flex flex-col">
@@ -53,19 +53,19 @@ const AllyHome: React.FC = () => {
 									src={nft.metadata.image} // Can set to URL or IPFS
 									style={{ width: "100%", marginTop: "10px" }}
 								/>
-							</Link>
+							</Link>	
 						) : null}
 						{smartAccount ? (
-							<>
+						<>
 							<p className="font-semibold text-center mb-2">
-								You own {ownsAllyDropToken ? '1' : '0'} ally badge!
+								You own {ownsKookDropToken ? '1' : '0'} Kook trophy!
 							</p>
-							{ownsAllyDropToken ? null : (
+							{ownsKookDropToken ? null : (
 									<TransactionButton
 										transaction={() =>
 										claimTo({
-											contract: allyDropContract,
-											tokenId: allyDropTokenId,
+											contract: kookDropContract,
+											tokenId: kookDropTokenId,
 											to: smartAccount.address,
 											quantity: 1n,
 										})
@@ -102,4 +102,4 @@ const AllyHome: React.FC = () => {
 	);
 };
 
-export default AllyHome;
+export default KookHome;

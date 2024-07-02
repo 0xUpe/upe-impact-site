@@ -11,7 +11,7 @@ import Allies from "./Allies";
 import Projects from "./Projects";
 import Join from "./Join";
 import Footer from "./Footer";
-import Menu from "./Menu";
+import Menu from "./Claims";
 
 const Home: React.FC = () => {
   const activeAccount = useActiveAccount();
