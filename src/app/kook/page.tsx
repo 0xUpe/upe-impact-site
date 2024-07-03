@@ -29,8 +29,24 @@ const KookHome: React.FC = () => {
 		address: smartAccount?.address!,
 		queryOptions: { enabled: !!smartAccount },
 	});
+
 	// Check if the user owns the kookDropTokenId
-    const ownsKookDropToken = ownedNfts?.some(nft => nft.id === kookDropTokenId);
+	const ownsKookDropToken = ownedNfts?.some(nft => nft.id === kookDropTokenId);
+
+	const prepareClaimTransaction = async () => {
+		if (!smartAccount) {
+			throw new Error("You must be logged in to claim your Kook trophy.");
+		}
+
+		const preparedTransaction = await claimTo({
+			contract: kookDropContract,
+			tokenId: kookDropTokenId,
+			to: smartAccount.address,
+			quantity: 1n,
+		});
+		
+		return preparedTransaction;
+	};
 
 	return (
 		<div className="flex flex-col items-center">
@@ -56,42 +72,40 @@ const KookHome: React.FC = () => {
 							</Link>	
 						) : null}
 						{smartAccount ? (
-						<>
-							<p className="font-semibold text-center mb-2">
-								You own {ownsKookDropToken ? '1' : '0'} Kook trophy!
-							</p>
-							{ownsKookDropToken ? null : (
+							<>
+								<p className="font-semibold text-center mb-2">
+									You own {ownsKookDropToken ? '1' : '0'} Kook trophy!
+								</p>
+								{ownsKookDropToken ? null : (
 									<TransactionButton
-										transaction={() =>
-										claimTo({
-											contract: kookDropContract,
-											tokenId: kookDropTokenId,
-											to: smartAccount.address,
-											quantity: 1n,
-										})
-										}
+										transaction={prepareClaimTransaction}
 										onError={(error) => {
-											alert(`Error Claiming! Are you a Kook? Drop a message in the Kook chat. Error Details: ${error.message}`);
+											console.error("Transaction Error: ", error);
+											if (error instanceof Error) {
+												alert(`Error Claiming! Are you a Kook? Drop a message in the Kook chat. Error Details: ${error.message}`);
+											} else {
+												alert("Transaction Error! An unknown error occurred.");
+											}
 										}}
 										onTransactionConfirmed={async () => {
-										alert("Claim successful!");
+											alert("Thanks for being a Kook!");
 										}}
 									>
 										Claim!
 									</TransactionButton>
-									)}
-								</>
-								) : (
-								<p
-									style={{
+								)}
+							</>
+						) : (
+							<p
+								style={{
 									textAlign: "center",
 									width: "100%",
 									marginTop: "10px",
-									}}
-								>
-									Login to claim!
-								</p>
-								)}
+								}}
+							>
+								Login to claim!
+							</p>
+						)}
 					</>
 				)}
 			</div>
