@@ -71,7 +71,7 @@ const KookHome: React.FC = () => {
 										})
 										}
 										onError={(error) => {
-										alert(`Error: ${error.message}`);
+											alert(`Error Claiming! Are you a Kook? Drop a message in the Kook chat. Error Details: ${error.message}`);
 										}}
 										onTransactionConfirmed={async () => {
 										alert("Claim successful!");
