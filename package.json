@@ -14,9 +14,10 @@
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
     "remark-gfm": "4.0.0",
-    "thirdweb": "^5.29.2",
+    "thirdweb": "^5.32.1",
     "date-fns": "^3.6.0",
-    "@ethereum-attestation-service/eas-sdk": "^2.3.0"
+    "@ethereum-attestation-service/eas-sdk": "^2.3.0",
+    "canvas-confetti": "^1.9.3"
   },
   "devDependencies": {
     "@types/node": "^20",

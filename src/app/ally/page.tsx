@@ -15,6 +15,7 @@ import {
 } from "@/constants";
 import SignIn from "@/components/SignIn";
 import Link from "next/link";
+import useConfetti from "@/hooks/useConfetti";
 
 const AllyHome: React.FC = () => {
 	const smartAccount = useActiveAccount();
@@ -30,7 +31,8 @@ const AllyHome: React.FC = () => {
 		queryOptions: { enabled: !!smartAccount },
 	});
 	// Check if the user owns the allyDropTokenId
-    const ownsAllyDropToken = ownedNfts?.some(nft => nft.id === allyDropTokenId);
+	const ownsAllyDropToken = ownedNfts?.some(nft => nft.id === allyDropTokenId);
+	const showConfetti = useConfetti();
 
 	return (
 		<div className="flex flex-col items-center">
@@ -71,27 +73,28 @@ const AllyHome: React.FC = () => {
 										})
 										}
 										onError={(error) => {
-										alert(`Error: ${error.message}`);
+											alert(`Error: ${error.message}`);
 										}}
 										onTransactionConfirmed={async () => {
-										alert("Claim successful!");
+											showConfetti();
+											alert("Claim successful!");
 										}}
 									>
 										Claim!
 									</TransactionButton>
-									)}
-								</>
-								) : (
-								<p
-									style={{
+								)}
+							</>
+						) : (
+							<p
+								style={{
 									textAlign: "center",
 									width: "100%",
 									marginTop: "10px",
-									}}
-								>
-									Login to claim!
-								</p>
-								)}
+								}}
+							>
+								Login to claim!
+							</p>
+						)}
 					</>
 				)}
 			</div>

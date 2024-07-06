@@ -15,6 +15,7 @@ import {
 } from "@/constants";
 import SignIn from "@/components/SignIn";
 import Link from "next/link";
+import useConfetti from "@/hooks/useConfetti";
 
 const KookHome: React.FC = () => {
 	const smartAccount = useActiveAccount();
@@ -32,6 +33,7 @@ const KookHome: React.FC = () => {
 
 	// Check if the user owns the kookDropTokenId
 	const ownsKookDropToken = ownedNfts?.some(nft => nft.id === kookDropTokenId);
+	const showConfetti = useConfetti();
 
 	const prepareClaimTransaction = async () => {
 		if (!smartAccount) {
@@ -88,6 +90,7 @@ const KookHome: React.FC = () => {
 											}
 										}}
 										onTransactionConfirmed={async () => {
+											showConfetti();
 											alert("Thanks for being a Kook!");
 										}}
 									>
