@@ -1,8 +1,8 @@
 import Image from "next/image";
-import upeIcon from "@public/upe_favicon.png";
-import ClaimItem from "./ClaimItem"; 
+//import upeIcon from "@public/upe_favicon.png"; 
 import { Account } from "thirdweb/wallets"; 
-import Link from "next/link";
+//import Link from "next/link";
+import ClaimItem from "@/app/dashboard/_components/ClaimItem";
 
 interface HeaderProps {
   activeAccount: Account | null;
@@ -10,16 +10,9 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ activeAccount }) => {
   return (
-    <header className="flex flex-col items-center mb-10 md:mb-10 p-1 pt-7">
-      <Link href="/">
-      <Image
-        src={upeIcon}
-        alt=""
-        width={120}
-        height={120}        
-        />
-        </Link>
-      <h1 className="text-2xl md:text-4xl lg:text-6xl tracking-tighter my-6 text-zinc-100">
+    <header className="flex flex-col items-center mb-10 md:mb-10 p-1 pt-2">
+      {/* <Link href="/"> <Image src={upeIcon} alt="" width={120} height={120} /> </Link> */}
+      <h1 className="text-2xl md:text-4xl lg:text-6xl tracking-tighter mb-6 text-zinc-100">
         {activeAccount ? (
           <>
             <span className="text-upe-pink">Upe Impact</span> Member Dashboard
@@ -33,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ activeAccount }) => {
       <h2 className="text-xl font-semibold text-center text-zinc-400 text-base mb-5 md:mb-5">
         {activeAccount
           ? "Hey there 👋🏽 community player, 🏆 Claim your local impact badges. 🏆"
-          : "Collaborate with your community. Collect badges for your good deeds."}
+          : "Sign in to claim."}
       </h2>
       {activeAccount && (
         <div className="on-deck justify-center items-center">

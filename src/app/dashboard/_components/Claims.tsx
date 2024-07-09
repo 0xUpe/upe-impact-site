@@ -1,6 +1,6 @@
-import ClaimItem from "./ClaimItem";
+import ClaimItem from "./ClaimItem"; 
 
-const Menu: React.FC = () => {
+const Claims: React.FC = () => {
   return (
     <div>
       <h2 className="text-xl text-center font-semibold mb-4">COMING SOON! For Previous Upe Builders</h2>
@@ -52,4 +52,4 @@ const Menu: React.FC = () => {
   );
 };
 
-export default Menu;
+export default Claims;

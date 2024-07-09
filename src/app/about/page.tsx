@@ -1,18 +1,12 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import upeIcon from "@public/upe_favicon.png";
 
 const AboutPage: React.FC = () => {
   return (
     <>
-    <div className="outer-container py-10 w-full mx-auto max-w-screen-xl">
+    <div className="outer-container pb-10 w-full mx-auto max-w-screen-xl">
       <div className="inner-container mx-auto px-4 max-w-screen-lg">
-        <header className="flex flex-col items-center mb-10 md:mb-10 p-1 pt-7">
-        <Link href="/">
-          <Image src={upeIcon} alt="Upe Impact Home" width={120} height={120} />          
-        </Link>
-          <h1 className="text-2xl md:text-6xl tracking-tighter mb-2 text-zinc-100 mt-6">
+        <header className="flex flex-col items-center mb-10 md:mb-10 p-1 pt-2">        
+          <h1 className="text-2xl md:text-6xl tracking-tighter mb-2 text-zinc-100 mt-2">
           What is <span className="text-upe-pink">Upe Impact</span>
           </h1>
         </header>          
@@ -54,10 +48,7 @@ const AboutPage: React.FC = () => {
           <p className="text-lg">
             We hope our community experiences an &quot;ah-ha&quot; moment, realizing the value of web3 technology for impact narratives. We anticipate this event to be a springboard for more conversations, bringing more people into the Upe community and onchain, utilizing Base and Coinbase Wallet.
             </p>
-            <Link href={"/"} className="text-base text-gray-400 mt-8 text-center block py-2 px-4 mx-auto">
-            Back to home
-            </Link>
-        </div>
+         </div>
       </div>
     </>
   );

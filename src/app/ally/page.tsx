@@ -98,9 +98,6 @@ const AllyHome: React.FC = () => {
 					</>
 				)}
 			</div>
-			<Link href={"/"} className="text-sm text-gray-400 mt-8">
-				Back to home
-			</Link>
 		</div>
 	);
 };

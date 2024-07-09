@@ -2,6 +2,7 @@ import Image from "next/image";
 import fbIcon from "@public/fbicon.svg";
 import twIcon from "@public/twicon.svg";
 import igIcon from "@public/igicon.svg";
+import ghIcon from "@public/ghicon.svg";
 
 const GetSocial: React.FC = () => {
   return (
@@ -19,6 +20,9 @@ const GetSocial: React.FC = () => {
           </a>
           <a href="https://www.instagram.com/upe.local/" target="_blank" rel="noopener noreferrer">
             <Image src={igIcon} alt="Upe FB" width={32} height={32} style={{ filter: "drop-shadow(0px 0px 24px #a726a9a8)" }} />
+          </a>
+          <a href="https://github.com/0xUpe/upe-impact-site/" target="_blank" rel="noopener noreferrer">
+            <Image src={ghIcon} alt="Upe FB" width={32} height={32} style={{ filter: "drop-shadow(0px 0px 24px #a726a9a8)" }} />
           </a>
         </div>
       </div>
