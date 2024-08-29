@@ -20,11 +20,7 @@ Before you start, you need to replace the placeholder `clientId` with your clien
 
 Refer to [Creating a client](https://portal.thirdweb.com/typescript/v5/client) guide to see how you can get a client id.
 
-Go to `src/constants.ts` file and replace the placeholder `clientId` with your client ID.
-
-```ts
-const clientId = "......";
-```
+Go to the `/.env.local` file and add your Client ID to the key `NEXT_PUBLIC_TEMPLATE_CLIENT_ID`
 
 ### Enable corepack (Added in Node v16.9.0)
 

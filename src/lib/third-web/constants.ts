@@ -18,5 +18,4 @@ const getActiveChain = (chain?: string) => {
 export const activeChain = getActiveChain(process.env.NEXT_PUBLIC_THIRDWEB_ACTIVE_CHAIN);
 export const factoryAddress = process.env.NEXT_PUBLIC_THIRDWEB_FACTORY_ADDRESS;
 export const clientId = process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID;
-export const LAST_CONNECT_PERSONAL_WALLET_ID =
-	'last-connect-personal-wallet-id';
+export const LAST_CONNECT_PERSONAL_WALLET_ID = 'last-connect-personal-wallet-id';
