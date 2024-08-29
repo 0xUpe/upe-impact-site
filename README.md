@@ -26,6 +26,16 @@ Go to `src/constants.ts` file and replace the placeholder `clientId` with your c
 const clientId = "......";
 ```
 
+### Enable corepack (Added in Node v16.9.0)
+
+The preferred way to manage Yarn is by-project and through Corepack, a tool shipped by default with Node.js. Modern releases of Yarn aren't meant to be installed globally, or from npm.
+
+Start by enabling Corepack, if it isn't already; this will add the yarn binary to your PATH:
+
+```
+corepack enable
+```
+
 ### Install dependencies
 
 ```bash
