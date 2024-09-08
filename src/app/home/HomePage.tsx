@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
         <div className="h-1 bg-gradient-to-r from-pink-600 via-red-500 to-yellow-400 rounded mb-10 w-11/12 mx-auto"></div>
         <Badges />
         <WhatIsUpe />
-        <OCS />
+        {/* <OCS /> */}
         <div className="allies-outer bg-upe-gradient w-full p-2 md:p-6 lg:p-8 max-w-screen-xl">
           <Allies />
           <Projects />
